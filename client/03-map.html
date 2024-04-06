@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const app = document.getElementById("app");
+      const todos = [
+        { title: "Lavar ropa", completed: false },
+        { title: "Planchar", completed: true },
+        { title: "Cocinar", completed: false },
+        { title: "Tejer", completed: true },
+      ];
+      const todosMap = todos.map((todo) => {
+        return `<li>La tarea ${todo.title + "++"} está: ${
+          todo.completed ? "✔️" : "✖️"
+        } </li>`;
+      });
+      app.innerHTML = todosMap.join("");
+    </script>
+  </body>
+</html>
